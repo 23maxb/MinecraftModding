@@ -1,6 +1,8 @@
 package net.maxbl.firstmod;
 
 import com.mojang.logging.LogUtils;
+import net.maxbl.firstmod.block.ModBlocks;
+import net.maxbl.firstmod.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
@@ -30,6 +32,12 @@ public class FirstMod
     public FirstMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+
+        //put stuff here for items
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
