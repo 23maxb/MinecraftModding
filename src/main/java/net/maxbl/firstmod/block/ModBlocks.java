@@ -28,6 +28,7 @@ public class ModBlocks
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)
     {
         RegistryObject<T> ret = BLOCKS.register(name, block);
+        registerBlockItem(name, ret); // Register a BlockItem for this block
         return ret;
     }
 

@@ -1,3 +1,6 @@
 {
-  "parent": "firstmod:block/ruby_block"
+  "parent": "firstmod:block/ruby_block",
+  "textures": {
+    "all": "firstmod:block/ruby_block"
+  }
 }
