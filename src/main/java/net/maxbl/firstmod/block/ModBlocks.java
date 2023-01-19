@@ -1,6 +1,7 @@
 package net.maxbl.firstmod.block;
 
 import net.maxbl.firstmod.item.ModItems;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -35,8 +36,10 @@ public class ModBlocks
     private static <T extends Block> RegistryObject<BlockItem> registerBlockItem(String name,
                                                                                  Supplier<T> block)
     {
+        Component.literal("block." + MOD_ID + "." + name);
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
                 new Item.Properties()));
+
     }
 
     public static final RegistryObject<Block> RUBY_BLOCK = registerBlock("ruby_block",
